@@ -55,7 +55,31 @@ header {
 }
 
 .options-area {
+  
   display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.length-area {
+  flex-grow: 1;
+}
+
+.inclusions-area {
+  background-color: lightblue;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.option-panel {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.option {
 }
 
 .card-footer {
