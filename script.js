@@ -20,15 +20,23 @@ function writePassword() {
 
 // Generates a password based on the criteria specified
 const generatePassword = (datasets, passLength) => {
-  let password = "";
-  for(let i = 0; i < passLength; i++) {
+  let password = [];
+  //to ensure that every character is present
+  //add one of each selected to the beginning, then shuffle end result
+  for(let i = 0; i < datasets.length; i++) {
+    let charNum = Math.floor(Math.random() * datasets[i].length);
+    password.push(datasets[i][charNum]);
+  }
+  for(let i = datasets.length; i < passLength; i++) {
     let setNum = Math.floor(Math.random() * datasets.length);
     let charNum = Math.floor(Math.random() * datasets[setNum].length);
-    password += datasets[setNum][charNum];
+    password.push(datasets[setNum][charNum]);
   }
-  return password;
+  shuffle(password);
+  return stringify(password);
 };
 
+//returns collection of datasets indicated by user preferences
 const gatherDatasets = () => {
   let datasets = [];
   if(document.getElementById("lowercaseCB").checked) datasets.push(lowerCaseChars);
@@ -36,6 +44,25 @@ const gatherDatasets = () => {
   if(document.getElementById("numberCB").checked) datasets.push(numbers);
   if(document.getElementById("specialCharCB").checked) datasets.push(specialChars);
   return datasets;
+};
+
+//shuffles all entries in an array
+const shuffle = (arr) => {
+  for(let i = arr.length-1; i >= 0; i--) {
+    let other = Math.floor(Math.random() * i);
+    let temp = arr[other];
+    arr[other] = arr[i];
+    arr[i] = temp;
+  }
+};
+
+//takes an array and returns a string concatenating all the entries
+const stringify = (arr) => {
+  let result = "";
+  for(let i = 0; i < arr.length; i++) {
+    result += arr[i];
+  }
+  return result;
 };
 
 // Verifies that at least one checkbox is checked and disables the button if none are
