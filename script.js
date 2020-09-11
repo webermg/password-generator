@@ -1,6 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 let checkboxes = document.querySelectorAll(".checkbox");
+let lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+let upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numbers = "0123456789";
+let specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 // Write password to the #password input
 function writePassword() {
