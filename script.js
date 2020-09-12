@@ -1,18 +1,18 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-let checkboxes = document.querySelectorAll(".checkbox");
+const generateBtn = document.querySelector("#generate");
+const checkboxes = document.querySelectorAll(".checkbox");
 
-let lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
-let upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let numbers = "0123456789";
-let specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 // Write password to the #password input
 function writePassword() {
-  let datasets = gatherDatasets();
-  let passLength = document.getElementById("lengthInput").value;
-  var password = generatePassword(datasets, passLength);
-  var passwordText = document.querySelector("#password");
+  const datasets = gatherDatasets();
+  const passLength = document.getElementById("lengthInput").value;
+  const password = generatePassword(datasets, passLength);
+  const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
@@ -24,12 +24,12 @@ const generatePassword = (datasets, passLength) => {
   //to ensure that every character is present
   //add one of each selected to the beginning, then shuffle end result
   for(let i = 0; i < datasets.length; i++) {
-    let charNum = Math.floor(Math.random() * datasets[i].length);
+    const charNum = Math.floor(Math.random() * datasets[i].length);
     password.push(datasets[i][charNum]);
   }
   for(let i = datasets.length; i < passLength; i++) {
-    let setNum = Math.floor(Math.random() * datasets.length);
-    let charNum = Math.floor(Math.random() * datasets[setNum].length);
+    const setNum = Math.floor(Math.random() * datasets.length);
+    const charNum = Math.floor(Math.random() * datasets[setNum].length);
     password.push(datasets[setNum][charNum]);
   }
   shuffle(password);
@@ -49,8 +49,8 @@ const gatherDatasets = () => {
 //shuffles all entries in an array
 const shuffle = (arr) => {
   for(let i = arr.length-1; i >= 0; i--) {
-    let other = Math.floor(Math.random() * i);
-    let temp = arr[other];
+    const other = Math.floor(Math.random() * i);
+    const temp = arr[other];
     arr[other] = arr[i];
     arr[i] = temp;
   }
