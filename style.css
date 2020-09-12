@@ -57,12 +57,12 @@ header {
 .options-area {
   
   display: flex;
-  /* flex-wrap: wrap; */
   padding-bottom: 20px;
 }
 
+/* length specification area */
+
 .length-area {
-  /* background-color: lightpink; */
   padding-right: 20px;
   margin-top: 5px;
   border-right: 1px solid #c0c7cf;
@@ -79,8 +79,9 @@ header {
   margin-top: 5px;
 }
 
+/* character options area */
+
 .inclusions-area {
-  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -101,11 +102,12 @@ header {
 }
 
 .option-panel {
-  /* background-color: lightgray; */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
+
+/* footer */
 
 .card-footer {
   text-align: center;
@@ -182,15 +184,14 @@ button[disabled] {
     font-size: 1rem;
   }
 
+  /* shift to column display and change borders accordingly */
   .options-area {
     flex-direction: column;
   }
 
   .length-area {
     margin: 0 auto;
-    /* padding-bottom: 10px; */
     border-right: 0;
-    /* border-bottom: 1px solid #e7e9eb */
   }
 
   .inclusions-area {

@@ -11,7 +11,7 @@ const specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 // Write password to the #password input
 function writePassword() {
   const datasets = gatherDatasets();
-  const passLength = document.getElementById("lengthInput").value;
+  const passLength = lengthField.value;
   const password = generatePassword(datasets, passLength);
   const passwordText = document.querySelector("#password");
 
@@ -23,11 +23,12 @@ function writePassword() {
 const generatePassword = (datasets, passLength) => {
   let password = [];
   //to ensure that every character is present
-  //add one of each selected to the beginning, then shuffle end result
+  //add one of each selected to the beginning
   for(let i = 0; i < datasets.length; i++) {
     const charNum = Math.floor(Math.random() * datasets[i].length);
     password.push(datasets[i][charNum]);
   }
+  //add rest of characters randomly
   for(let i = datasets.length; i < passLength; i++) {
     const setNum = Math.floor(Math.random() * datasets.length);
     const charNum = Math.floor(Math.random() * datasets[setNum].length);
