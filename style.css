@@ -62,14 +62,24 @@ header {
 }
 
 .length-area {
+  background-color: lightpink;
   flex-grow: 1;
 }
 
 .inclusions-area {
   background-color: lightblue;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+}
+
+.inclusions-subarea {
   display: flex;
   justify-content: space-between;
+}
+
+.options-header {
+  text-align: center;
 }
 
 .option-panel {
