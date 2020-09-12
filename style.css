@@ -72,6 +72,13 @@ header {
   width: 100px;
 }
 
+.help-text {
+  text-align: right;
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+
 .inclusions-area {
   /* background-color: lightblue; */
   display: flex;
@@ -181,7 +188,7 @@ button[disabled] {
 
   .length-area {
     margin: 0 auto;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     border-right: 0;
     /* border-bottom: 1px solid #e7e9eb */
   }

@@ -24,19 +24,21 @@
 
       <!-- password options area -->
       <div class="options-area">
+        <!-- length specification -->
         <div class="length-area">
           <label for="lengthInput" class="lengthLabel">Password Length</label>
           <input type="text" class="lengthInput" name="lengthInput" value="8" id="lengthInput">
+          <p class="help-text">min: 8, max: 128</p>
         </div>
 
+        <!-- character options -->
         <div class="inclusions-area">
           <div class="header-div">
             <p class="options-header">Characters to include</p>
           </div>
           <div class="inclusions-subarea">
           <div class="option-panel">
-              <div class="option">
-                
+              <div class="option">                
                 <input type="checkbox" class="checkbox" id="lowercaseCB" checked>
                 <label for="lowercaseCB" class="">Lowercase</label>
               </div>
@@ -45,7 +47,6 @@
                 <input type="checkbox" class="checkbox" id="numberCB">
                 <label for="numberCB" class="">Numbers</label>
               </div>
-
             </div>
             <div class="option-panel">
               <div class="option">
@@ -57,14 +58,12 @@
                 <input type="checkbox" class="checkbox" id="specialCharCB">
                 <label for="specialCharCB" class="">Special</label>
               </div>
-
             </div>
           </div>
-
         </div>
-
-
       </div>
+      <!-- end password options area -->
+
       <div class="card-footer">
         <button id="generate" class="btn">Generate Password</button>
       </div>
