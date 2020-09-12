@@ -85,12 +85,21 @@ checkboxes.forEach(element => {
 });
 
 // Add event listener to length field to validate input
-lengthField.oninput = (event) => {
-  lengthField.value = lengthField.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-  if(lengthField.value === "") lengthField.value = 8;
-  let value = lengthField.value;
-  value = parseInt(value);
-  if(value > 128) value = 128;
-  else if(value < 8) value = 8;
-  lengthField.value = value;
-}
+lengthField.addEventListener("input", () => {
+  // lengthField.value = lengthField.value.replace(/[^0-9]/g, '');//.replace(/(\..*)\./g, '$1');
+
+  // if(lengthField.value[lengthField.value.length-1].is)
+
+  if(lengthField.value.length > 0 && !isNaN(parseInt(lengthField.value))) {
+    let length = parseInt(lengthField.value);
+    console.log(length);
+    if(length > 128) length = 128;
+    lengthField.value = length;
+  }
+  else lengthField.value = "";
+});
+
+// Disallow blank input in password length field
+lengthField.addEventListener("focusout", () => {
+  if(lengthField.value.length === 0 || parseInt(lengthField.value) < 8) lengthField.value = 8;
+});
