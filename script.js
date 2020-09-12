@@ -86,13 +86,8 @@ checkboxes.forEach(element => {
 
 // Add event listener to length field to validate input
 lengthField.addEventListener("input", () => {
-  // lengthField.value = lengthField.value.replace(/[^0-9]/g, '');//.replace(/(\..*)\./g, '$1');
-
-  // if(lengthField.value[lengthField.value.length-1].is)
-
   if(lengthField.value.length > 0 && !isNaN(parseInt(lengthField.value))) {
     let length = parseInt(lengthField.value);
-    console.log(length);
     if(length > 128) length = 128;
     lengthField.value = length;
   }

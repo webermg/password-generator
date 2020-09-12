@@ -62,34 +62,42 @@ header {
 }
 
 .length-area {
-  background-color: lightpink;
-  flex-grow: 1;
+  /* background-color: lightpink; */
+  padding-right: 20px;
+  margin-top: 5px;
+  border-right: 1px solid #c0c7cf;
+}
+
+.lengthInput {
+  width: 100px;
 }
 
 .inclusions-area {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding-left: 20px;
 }
 
 .inclusions-subarea {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
+  border: 1px solid #c0c7cf;
+  border-radius: 5px;
 }
 
 .options-header {
   text-align: center;
+  margin: 5px auto;
 }
 
 .option-panel {
-  background-color: lightgray;
+  /* background-color: lightgray; */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.option {
 }
 
 .card-footer {
@@ -173,10 +181,15 @@ button[disabled] {
 
   .length-area {
     margin: 0 auto;
+    padding-bottom: 10px;
+    border-right: 0;
+    /* border-bottom: 1px solid #e7e9eb */
   }
 
   .inclusions-area {
     margin-top: 5px;
+    border-top: 1px solid #e7e9eb;
+    padding-left: 0;
   }
 }
 
