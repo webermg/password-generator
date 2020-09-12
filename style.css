@@ -57,7 +57,7 @@ header {
 .options-area {
   
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding-bottom: 20px;
 }
 
@@ -155,6 +155,18 @@ button[disabled] {
 
   #password {
     font-size: 1rem;
+  }
+
+  .options-area {
+    flex-direction: column;
+  }
+
+  .length-area {
+    margin: 0 auto;
+  }
+
+  .inclusions-area {
+    margin-top: 5px;
   }
 }
 
