@@ -1,6 +1,7 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 const checkboxes = document.querySelectorAll(".checkbox");
+const lengthField = document.getElementById("lengthInput");
 
 const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
 const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -82,3 +83,14 @@ generateBtn.addEventListener("click", writePassword);
 checkboxes.forEach(element => {
   element.addEventListener("click", verifyFormValidity)
 });
+
+// Add event listener to length field to validate input
+lengthField.oninput = (event) => {
+  lengthField.value = lengthField.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  if(lengthField.value === "") lengthField.value = 8;
+  let value = lengthField.value;
+  value = parseInt(value);
+  if(value > 128) value = 128;
+  else if(value < 8) value = 8;
+  lengthField.value = value;
+}
